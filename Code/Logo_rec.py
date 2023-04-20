@@ -17,10 +17,10 @@ for gpu in gpus:
 import cv2
 import imghdr
 
-data_dir = "/Users/paulinaheine/Codes/Vodafone_Inventur/Logos"
+data_dir = "/Users/paulinaheine/Codes//Logos"
 image_exts = ['jpeg', 'jpg', 'bmp', 'png']
 
-ds_store_file_location = '/Users/paulinaheine/Codes/Vodafone_Inventur/Logos/.DS_store'
+ds_store_file_location = '/Users/paulinaheine/Codes/Logos/.DS_store'
 if os.path.isfile(ds_store_file_location):
     os.remove(ds_store_file_location)
 
@@ -43,7 +43,7 @@ for image_class in os.listdir(data_dir):
 import numpy as np
 from matplotlib import pyplot as plt
 
-data = tf.keras.utils.image_dataset_from_directory('/Users/paulinaheine/Codes/Vodafone_Inventur/Logos',labels='inferred', color_mode= "rgb" )
+data = tf.keras.utils.image_dataset_from_directory('/Users/paulinaheine/Codes//Logos',labels='inferred', color_mode= "rgb" )
 data_iterator = data.as_numpy_iterator()
 batch = data_iterator.next()
 
@@ -88,7 +88,7 @@ model.compile('adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'])
 model.summary()
 
 # Train
-logdir = '/Users/paulinaheine/Codes/Vodafone_Inventur/Logos'
+logdir = '/Users/paulinaheine/Codes//Logos'
 
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 
@@ -127,7 +127,7 @@ print(pre.result(), re.result(), acc.result())
 
 import cv2
 
-img = cv2.imread('/Users/paulinaheine/Codes/Vodafone_Inventur/Logos/cisco/Luzon_Cisco_Transport2C_Inc._logo.jpg')
+img = cv2.imread('/Users/paulinaheine/Codes//Logos/cisco/Luzon_Cisco_Transport2C_Inc._logo.jpg')
 plt.imshow(img)
 resize = tf.image.resize(img, (256, 256))
 plt.imshow(resize.numpy().astype(int))
@@ -143,7 +143,7 @@ else:
     print(f'Predicted class is Cisco')
 
 
-img = cv2.imread('/Users/paulinaheine/Codes/Vodafone_Inventur/Logos/cisco/Luzon_Cisco_Transport2C_Inc._logo.jpg')
+img = cv2.imread('/Users/paulinaheine/Codes//Logos/cisco/Luzon_Cisco_Transport2C_Inc._logo.jpg')
 resize = tf.image.resize(img, (256, 256))
 
 yhat = model.predict(np.expand_dims(resize / 255, 0))
