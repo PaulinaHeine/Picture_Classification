@@ -19,17 +19,17 @@ for gpu in gpus:
 import cv2
 import imghdr
 
-data_dir = "/Users/paulinaheine/Codes/Vodafone_Inventur/Logos"
+data_dir = "/Users/paulinaheine/Codes//Logos"
 image_exts = ['jpeg', 'jpg', 'bmp', 'png']
 
-ds_store_file_location = '/Users/paulinaheine/Codes/Vodafone_Inventur/Logos/.DS_store'
+ds_store_file_location = '/Users/paulinaheine/Codes//Logos/.DS_store'
 if os.path.isfile(ds_store_file_location):
     os.remove(ds_store_file_location)
 
 ''' Braucht ,man anscheinend nicht
-for image_class in os.listdir("/Users/paulinaheine/Codes/Vodafone_Inventur/Logos"):
-    os.listdir(os.path.join("/Users/paulinaheine/Codes/Vodafone_Inventur/Logos", image_class))
-    ds_store_file_location = os.listdir(os.path.join("/Users/paulinaheine/Codes/Vodafone_Inventur/Logos", image_class,".DS_store"))
+for image_class in os.listdir("/Users/paulinaheine/Codes//Logos"):
+    os.listdir(os.path.join("/Users/paulinaheine/Codes//Logos", image_class))
+    ds_store_file_location = os.listdir(os.path.join("/Users/paulinaheine/Codes//Logos", image_class,".DS_store"))
     if os.path.isfile(ds_store_file_location):
         os.remove(ds_store_file_location)
 '''
@@ -240,7 +240,7 @@ plt.show()
 
 '''
 #Hua, cisco, sun,sun
-test = ["/Users/paulinaheine/Codes/Vodafone_Inventur/Logos/Huawei/images31.jpg","/Users/paulinaheine/IMG_3083.png","/Users/paulinaheine/IMG_3120.png","/Users/paulinaheine/IMG_3121.png"]
+test = ["/Users/paulinaheine/Codes//Logos/Huawei/images31.jpg","/Users/paulinaheine/IMG_3083.png","/Users/paulinaheine/IMG_3120.png","/Users/paulinaheine/IMG_3121.png"]
 
 for i in range(len(test)):
     img = tf.keras.utils.load_img(
@@ -263,7 +263,7 @@ for i in range(len(test)):
 
 ## test all
 scores = []
-for image_class in os.listdir("/Users/paulinaheine/Codes/Vodafone_Inventur/Logos"):
+for image_class in os.listdir("/Users/paulinaheine/Codes//Logos"):
     full = len(os.listdir(os.path.join(data_dir, image_class)))
     count = 0
     print(image_class)
